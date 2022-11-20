@@ -10,6 +10,7 @@ import {
 import { AdDirective } from './ad.directive';
 import { AdItem } from './ad-item';
 import { AdComponent } from './ad.component';
+import { AdNotFoundComponent } from './ad-not-found.component';
 import { ADS } from './app.module';
 
 @Component({
@@ -65,7 +66,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent<AdComponent>(
-      adComponent.adType
+      adComponent?.adType ?? AdNotFoundComponent
     );
     componentRef.instance.data = data;
   }
