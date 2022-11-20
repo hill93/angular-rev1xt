@@ -41,19 +41,6 @@ export class AdBannerComponent implements OnInit, OnDestroy {
     clearInterval(this.interval);
   }
 
-  // loadComponent() {
-  //   this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
-  //   const adItem = this.ads[this.currentAdIndex];
-
-  //   const viewContainerRef = this.adHost.viewContainerRef;
-  //   viewContainerRef.clear();
-
-  //   const componentRef = viewContainerRef.createComponent<AdComponent>(
-  //     adItem.component
-  //   );
-  //   componentRef.instance.data = adItem.data;
-  // }
-
   loadComponent() {
     this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
     const adItem = this.ads[this.currentAdIndex];
