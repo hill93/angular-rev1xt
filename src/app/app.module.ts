@@ -7,7 +7,7 @@ import { HeroProfileComponent } from './hero-profile.component';
 import { AdDirective } from './ad.directive';
 import { AdService } from './ad.service';
 
-@NgModule({
+@NgModule({//test
   imports: [ BrowserModule ],
   providers: [ AdService ],
   declarations: [
