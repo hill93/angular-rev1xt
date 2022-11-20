@@ -12,7 +12,11 @@ export const ADS = new InjectionToken<AdComponent>('Ads');
 
 @NgModule({
   imports: [BrowserModule],
-  providers: [AdService],
+  providers: [
+    AdService,
+    { provide: ADS, useClass: HeroJobAdComponent, multi: true },
+    { provide: ADS, useClass: HeroProfileComponent, multi: true },
+  ],
   declarations: [
     AppComponent,
     AdBannerComponent,
