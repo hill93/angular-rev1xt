@@ -1,7 +1,9 @@
+import { Type } from '@angular/core';
+
 export interface AdComponent {
   data: any;
+  adType: Type<AdComponent>;
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
