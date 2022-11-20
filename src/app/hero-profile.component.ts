@@ -1,4 +1,4 @@
-import { Component, Input, Type } from '@angular/core';
+import { Component, Input, Type, Injectable } from '@angular/core';
 
 import { AdComponent } from './ad.component';
 
@@ -14,6 +14,7 @@ import { AdComponent } from './ad.component';
     </div>
   `,
 })
+@Injectable()
 export class HeroProfileComponent implements AdComponent {
   @Input() data: any;
   adType: Type<AdComponent> = HeroProfileComponent;
