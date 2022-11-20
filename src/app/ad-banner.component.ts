@@ -58,6 +58,8 @@ export class AdBannerComponent implements OnInit, OnDestroy {
     var data = {
       headline: 'Hello world!',
       body: 'I made this better using dependency injection!',
+      name: 'Henry Hill',
+      bio: 'Coolest dude ever',
     };
 
     var adComponent = this.adComponents.find((x) => x.name == 'Job');
