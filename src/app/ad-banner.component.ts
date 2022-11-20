@@ -34,7 +34,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadComponent();
-    //this.getAds();
+    this.getAds();
   }
 
   ngOnDestroy() {
@@ -55,14 +55,10 @@ export class AdBannerComponent implements OnInit, OnDestroy {
   // }
 
   loadComponent() {
-    var data = {
-      headline: 'Hello world!',
-      body: 'I made this better using dependency injection!',
-      name: 'Henry Hill',
-      bio: 'Coolest dude ever',
-    };
+    this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
+    const adItem = this.ads[this.currentAdIndex];
 
-    var adComponent = this.adComponents.find((x) => x.name == 'Job');
+    var adComponent = this.adComponents.find((x) => x.name == adItem.component);
 
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
@@ -70,7 +66,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
     const componentRef = viewContainerRef.createComponent<AdComponent>(
       adComponent?.adType ?? AdNotFoundComponent
     );
-    componentRef.instance.data = data;
+    componentRef.instance.data = adItem.data;
   }
 
   getAds() {
