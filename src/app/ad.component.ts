@@ -3,6 +3,7 @@ import { Type } from '@angular/core';
 export interface AdComponent {
   data: any;
   adType: Type<AdComponent>;
+  name: string;
 }
 
 /*

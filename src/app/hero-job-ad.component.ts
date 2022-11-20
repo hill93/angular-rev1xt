@@ -13,6 +13,7 @@ import { AdComponent } from './ad.component';
 export class HeroJobAdComponent implements AdComponent {
   @Input() data: any;
   adType: Type<AdComponent> = HeroJobAdComponent;
+  name: string = 'Job';
 }
 
 /*
